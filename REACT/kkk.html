@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proposta de Namoro</title>
+  <style>
+    .move {
+      position: absolute;
+      animation: moveButton 3s linear infinite;
+    }
+    
+    @keyframes moveButton {
+      0% { top: 0; left: 0; }
+      50% { top: 50%; right: 50%; }
+      100% { top: 0; right: 0; }
+    }
+  </style>
+  <script>
+    function moveButton() {
+      var button = document.getElementById("naoButton");
+      button.classList.add("move");
+      button.disabled = true;
+    }
+    
+    function imprimirMensagem() {
+      document.getElementById("mensagem").innerHTML = "Eu te amo";
+    }
+  </script>
+</head>
+<body>
+  <h1>Proposta de namoro ?</h1>
+  <p id="mensagem">Quer namorar comigo?</p>
+  <button onclick="imprimirMensagem()">Sim</button>
+  <button id="naoButton" onclick="moveButton()">Não</button>
+</body>
+</html>
